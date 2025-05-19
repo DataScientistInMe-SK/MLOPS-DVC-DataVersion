@@ -19,3 +19,6 @@ Steps to follow:
 14. Ensure everything is upto date by checking dvc/git status
 15. Repeat steps 11 to 13 for the next versions (V3, V4 and so on)
 
+git log --oneline
+git checkout <hash> - git checkout main/master
+dvc pull
