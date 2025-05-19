@@ -3,14 +3,14 @@ Steps to follow:
 1. Create git repo and clone it on the local machine.
 2. Create file "Code.py" by writing relevant code to it.
 3. Ensure to perform git add/commit/push before initilising DVC.
-4. Do "dvc init" (creates .dvcignore, .dvc).
-5. Do "mkdir S3" (creates S3 directory).
-6. Do "dvc remote add -d myremote S3"
-7. Next "dvc add data/", followed by-
+4. Do "dvc init" (creates .dvcignore, .dvc). ## Ensure to perform pip install dvc, if you never worked on dvc previously.
+5. Do "mkdir S3" (creates S3 directory). ## Temp Directory on Local Machine.
+6. Do "dvc remote add -d myremote S3" ### Syntax to let dvc know the location of the data directory, which could be Local or Cloud. This will set 'myremote' as a default remote.
+7. Next "dvc add data/", followed by-  ## Evertime save data in data/ folder for versioning
     a. "git rm -r --cached 'data'"
     b. "git commit -m "stop tracking data"
     As initially, we were tracking data/ folder  from git so now we remove it for DVC to handle
-8. Perform "dvc add data/" (creates data.dvc) followed by "git add .gitignore data.dvc"
+8. Rerun "dvc add data/" (creates data.dvc) followed by "git add .gitignore data.dvc"
 9. Next perform, "dvc commit" followed by "dvc push"
 10. Perform "git add/commit/push " mark this stage as a First Version(V1) of Data.
 11. Make changes to "Code.py" in order to add new row in data, and check changes by "dvc status"
